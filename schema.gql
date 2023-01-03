@@ -1,0 +1,35 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type CatType {
+  id: ID!
+  name: String!
+  age: Int!
+  owner: String!
+  breed: [String!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+type Query {
+  cats: [CatType!]!
+  findCatBreed(breed: [String!]!): [CatType!]!
+}
+
+type Mutation {
+  deleteCat(id: String!): [CatType!]!
+  createCat(input: CatInput!): CatType!
+}
+
+input CatInput {
+  name: String!
+  age: Int!
+  owner: String!
+  breed: JSON!
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON @specifiedBy(url: "http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf")
